@@ -1,15 +1,14 @@
-import { useState } from 'react';
 import styled from 'styled-components';
 
 import Direct from './Direct';
 import Search from './Search';
 
-import userIcon from '../img/png/dog.png';
-import twitchLogo from '../img/png/twitch-logo.png';
-import messageIcon from '../img/svg/fi-rr-comment-alt.svg';
-import crownIcon from '../img/svg/fi-rr-crown.svg';
-import noticeIcon from '../img/svg/fi-rr-inbox.svg';
-import chiPointIcon from '../img/svg/fi-rr-flip-horizontal.svg';
+import userIcon from '../../img/png/dog.png';
+import twitchLogo from '../../img/png/twitch-logo.png';
+import messageIcon from '../../img/svg/fi-rr-comment-alt.svg';
+import crownIcon from '../../img/svg/fi-rr-crown.svg';
+import noticeIcon from '../../img/svg/fi-rr-inbox.svg';
+import chiPointIcon from '../../img/svg/fi-rr-flip-horizontal.svg';
 
 const TwitchLogo = styled.div`
   height: 40px;
@@ -29,12 +28,14 @@ const TwitchLogo = styled.div`
 const Nav = styled.div`
   height: 50px;
   width: 100%;
-  position: absolute;
+  position: fixed;
   box-shadow: 0px 1px 3px #d4d4d4;
   display: flex;
   justify-content: column;
   padding: 0 0px;
   box-sizing: border-box;
+  z-index: 1000;
+  background-color: white;
 `;
 //左中右區塊
 const NavBlockLeft = styled.div`

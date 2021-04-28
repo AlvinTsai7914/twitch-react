@@ -1,17 +1,25 @@
 import styled from 'styled-components';
 import './App.css';
-import Header from './components/Header';
+import Header from './components/Header/Header';
+import SideBar from './components/SideBar/SideBar';
+import Main from './components/Main/Main';
 
-const SideBar = styled.div``;
-
-const MainPage = styled.div``;
+const Content = styled.div`
+  height: calc(100vh);
+  width: 100%;
+  padding-top: 50px;
+  display: flex;
+  over-flox: hidden;
+`;
 
 function App() {
   return (
-    <div className="App" >
+    <div className="App">
       <Header></Header>
-      <SideBar></SideBar>
-      <MainPage></MainPage>
+      <Content>
+        <SideBar></SideBar>
+        <Main></Main>
+      </Content>
     </div>
   );
 }
