@@ -9,32 +9,33 @@ const SideBarSearchWrapper = styled.div`
   position: fixed;
   bottom: 0;
   padding: 10px;
-`;
-const SideBarSearchInput = styled.input`
-  width: 100%;
-  height: 100%;
-  background-color: #d7d7d8;
-  border-radius: 4px;
-  border: 2px #d7d7d8 solid;
-  padding: 5px 10px 5px 30px;
-  color: black;
-  transition: background-color 0.1s ease;
-  transition: border 0.2s ease;
-  ::placeholder {
-    color: #000000ba;
-  }
 
-  &:hover {
+  & > input {
+    width: 100%;
+    height: 100%;
+    background-color: #d7d7d8;
+    border-radius: 4px;
+    border: 2px #d7d7d8 solid;
+    padding: 5px 10px 5px 30px;
+    color: black;
+    transition: background-color 0.1s ease;
     transition: border 0.2s ease;
-    border: 2px #ccc solid;
-  }
+    ::placeholder {
+      color: #000000ba;
+    }
 
-  &:focus {
-    transition: background-color 0.2s ease;
-    transition: border 0.1s ease;
-    outline: none;
-    border: 2px #9147ff solid;
-    background-color: white;
+    &:hover {
+      transition: border 0.2s ease;
+      border: 2px #ccc solid;
+    }
+
+    &:focus {
+      transition: background-color 0.2s ease;
+      transition: border 0.1s ease;
+      outline: none;
+      border: 2px #9147ff solid;
+      background-color: white;
+    }
   }
 `;
 
@@ -53,7 +54,7 @@ const SideBarSearch = () => {
       <SideBarSearchIcon>
         <img src={searchIcon16}></img>
       </SideBarSearchIcon>
-      <SideBarSearchInput placeholder="搜尋以新增好友"></SideBarSearchInput>
+      <input placeholder="搜尋以新增好友"></input>
     </SideBarSearchWrapper>
   );
 };

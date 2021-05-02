@@ -65,14 +65,15 @@ const NavBlockRight = styled.div`
 `;
 
 const CoreButton = styled.button`
-  height: 24px;
-  width: 24px;
+  height: 30px;
+  width: 30px;
   margin: 0 8px;
   border: none;
   border-radius: 4px;
-  background-color: white;
+  background-color: rgba(0, 0, 0, 0);
+
   &:hover {
-    background-color: #e5e5e5;
+    background-color: rgba(0, 0, 0, 0.1);
   }
   & > img {
     height: 16px;
@@ -84,8 +85,7 @@ const MoreIcon = styled.div`
   width: 100%;
   font-size: 22px;
   font-weight: bold;
-  text-align: center;
-  line-height: 14px;
+  line-height: 1;
   border-radius: 4px;
 `;
 
@@ -139,9 +139,11 @@ const Header = () => {
           <img src={twitchLogo} alt=""></img>
         </TwitchLogo>
         <Direct />
-        <CoreButton>
-          <MoreIcon>...</MoreIcon>
-        </CoreButton>
+        <div>
+          <CoreButton>
+            <MoreIcon>...</MoreIcon>
+          </CoreButton>
+        </div>
       </NavBlockLeft>
 
       <NavBlockMid>
