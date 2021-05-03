@@ -14,6 +14,14 @@ const ThumbListTitle = styled.p`
   font-size: 18px;
   font-weight: bold;
   padding-bottom: 10px;
+
+  & > a {
+    color: #772ce8;
+    text-decoration: none;
+    :hover {
+      text-decoration: underline;
+    }
+  }
 `;
 const ThumbListContents = styled.div`
   display: flex;
@@ -61,10 +69,17 @@ const ThumbListFooter = styled.div`
     background-color: #dededf;
   }
 `;
-export default function ThumbList() {
+export default function ThumbList({ game }) {
   return (
     <ThumbListWrapper>
-      <ThumbListTitle>推薦的頻道</ThumbListTitle>
+      {game !== undefined ? (
+        <ThumbListTitle>
+          推薦的 《<a href="@">{game.name}</a>》 頻道
+        </ThumbListTitle>
+      ) : (
+        <ThumbListTitle>推薦的頻道</ThumbListTitle>
+      )}
+
       <ThumbListContents>
         <ThumbCard></ThumbCard>
         <ThumbCard></ThumbCard>

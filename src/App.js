@@ -5,7 +5,7 @@ import SideBar from './components/SideBar/SideBar';
 import Main from './components/Main/Main';
 
 const Content = styled.div`
-  height: calc(100vh);
+  height: 100%;
   width: 100%;
   padding-top: 50px;
   display: flex;

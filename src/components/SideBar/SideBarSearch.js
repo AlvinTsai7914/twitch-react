@@ -9,6 +9,7 @@ const SideBarSearchWrapper = styled.div`
   position: fixed;
   bottom: 0;
   padding: 10px;
+  background-color: #efeff1;
 
   & > input {
     width: 100%;

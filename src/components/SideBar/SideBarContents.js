@@ -3,10 +3,12 @@ import styled from 'styled-components';
 
 import SideBarCard from './SideBarCard';
 
+import SimpleBar from 'simplebar-react';
+import 'simplebar/dist/simplebar.min.css';
+
 const SideBarContentsWrapper = styled.div`
   height: calc(100% - 51px);
   width: 100%;
-  over-flow: hidden;
 `;
 
 const SideBarSection = styled.div`
@@ -15,6 +17,7 @@ const SideBarSection = styled.div`
   align-items: center;
   justify-content: center;
   width: 100%;
+  padding: 0 4px 0 0;
   & > h5 {
     height: 29px;
     width: 220px;
@@ -64,43 +67,48 @@ const SideBarContents = () => {
   const [friendState, setFriendState] = useState([
     { userId: 1, name: '凱蛇 (kaizersjr)', game: 'Apex Legends', status: 'online', audience: '145' },
     { userId: 2, name: 'ANGRYPUG', game: 'Call of Duty: Warzone', status: 'offline', audience: '0' },
+    { userId: 3, name: 'ANGRYPUG', game: 'Call of Duty: Warzone', status: 'offline', audience: '0' },
+    { userId: 4, name: 'ANGRYPUG', game: 'Call of Duty: Warzone', status: 'offline', audience: '0' },
+    { userId: 5, name: 'ANGRYPUG', game: 'Call of Duty: Warzone', status: 'offline', audience: '0' },
   ]);
 
   return (
     <SideBarContentsWrapper>
-      <SideBarSection>
-        <h5>已追隨的頻道</h5>
-        <div>
-          {followingState.map((value) => (
-            <SideBarCard id={value.userId} value={value} />
-          ))}
-        </div>
-        <div className="more">
-          <button>顯示更多</button>
-        </div>
-      </SideBarSection>
-      <SideBarSection>
-        <h5>推薦的頻道</h5>
-        <div>
-          {advicingState.map((value) => (
-            <SideBarCard id={value.userId} value={value} />
-          ))}
-        </div>
-        <div className="more">
-          <button>顯示更多</button>
-        </div>
-      </SideBarSection>
-      <SideBarSection>
-        <h5>線上好友</h5>
-        <div>
-          {friendState.map((value) => (
-            <SideBarCard id={value.userId} value={value} />
-          ))}
-        </div>
-        <div className="more">
-          <button>顯示更多</button>
-        </div>
-      </SideBarSection>
+      <SimpleBar style={{ maxHeight: '100%' }}>
+        <SideBarSection>
+          <h5>已追隨的頻道</h5>
+          <div>
+            {followingState.map((value) => (
+              <SideBarCard key={value.userId} value={value} />
+            ))}
+          </div>
+          <div className="more">
+            <button>顯示更多</button>
+          </div>
+        </SideBarSection>
+        <SideBarSection>
+          <h5>推薦的頻道</h5>
+          <div>
+            {advicingState.map((value) => (
+              <SideBarCard key={value.userId} value={value} />
+            ))}
+          </div>
+          <div className="more">
+            <button>顯示更多</button>
+          </div>
+        </SideBarSection>
+        <SideBarSection>
+          <h5>線上好友</h5>
+          <div>
+            {friendState.map((value) => (
+              <SideBarCard key={value.userId} value={value} />
+            ))}
+          </div>
+          <div className="more">
+            <button>顯示更多</button>
+          </div>
+        </SideBarSection>
+      </SimpleBar>
     </SideBarContentsWrapper>
   );
 };

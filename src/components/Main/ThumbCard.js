@@ -9,18 +9,62 @@ const ThumbCardWrapper = styled.div`
 
 const CardImage = styled.div`
   width: 100%;
+  position: relative;
 
-  :hover {
-    transform: translate(px, -2px);
-    transition: all 0.2s ease-in-out;
+  & > div {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background-color: red;
+    bottom: 4px;
+    z-index: -10;
   }
+  :hover {
+    ::before {
+      transition-delay: 75ms;
+      transition: all 0.1s ease;
+      width: 6px;
+    }
+
+    ::after {
+      transition-delay: 75ms;
+      transition: all 0.1s ease;
+      height: 6px;
+    }
+
+    & > img {
+      transition-delay: 75ms;
+      transition: all 0.1s ease;
+      transform: translate(6px, -6px);
+    }
+  }
+
   & > img {
     width: 100%;
     cursor: pointer;
-    :hover {
-      transform: translate(px, -2px);
-      transition: all 0.2s ease-in-out;
-    }
+  }
+
+  ::before {
+    content: '';
+    display: block;
+    height: calc(100% - 4px);
+    width: 0px;
+    background-color: red;
+    position: absolute;
+    top: -3px;
+    transform: skewY(-45deg);
+  }
+
+  ::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 0px;
+    background-color: red;
+    position: absolute;
+    bottom: 4px;
+    left: 3px;
+    transform: skewX(-45deg);
   }
 `;
 const CardContent = styled.div`
@@ -112,8 +156,7 @@ export default function ThumbCard() {
     <ThumbCardWrapper>
       <CardImage>
         <img src="https://static-cdn.jtvnw.net/previews-ttv/live_user_zrush-440x248.jpg"></img>
-        <div></div>
-        <div></div>
+        <div> </div>
       </CardImage>
       <CardContent>
         <img src="https://static-cdn.jtvnw.net/jtv_user_pictures/0c4ee176-07e4-4345-921f-9e47de50cab4-profile_image-50x50.png"></img>

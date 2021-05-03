@@ -68,4 +68,10 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `yarn build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
 # twitch-react
+
+5/2 完成 side bar 和 main 的靜態畫面，下一步處理動態的部分。
+
+5/3  1. 插入SimpleBar，為了避免瀏覽器 scroll bar 出現，Main 的 position 從 relative 改成 fixed ( 猜測 fixed 跳脫出瀏覽器的內部框架，純屬猜測 )。  2. 完成 ThumbCard hover，利用了偽元素和 transform: skew() ，但 twitch 好像是使用 transform: scale()，之後有時間再來研究。
+
