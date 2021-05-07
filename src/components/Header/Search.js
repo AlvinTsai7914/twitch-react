@@ -4,8 +4,6 @@ import styled from 'styled-components';
 import searchIcon16 from '../../img/png/loupe16.png';
 import cross from '../../img/svg/fi-br-cross-small.svg';
 
-const API_ENDPOINT = 'https://api.twitch.tv/kraken/search/channels?query=';
-
 const SearchRelatvie = styled.div`
   flex-flow: column||wrap;
   height: fit-content;

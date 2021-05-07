@@ -1,7 +1,14 @@
+//react hook 和 插件
+import React, { useState } from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
+//modules 和 components
 import ThumbCard from './ThumbCard';
+
+//圖片
 import downArrow from '../../img/png/down-arrow.png';
+
 const ThumbListWrapper = styled.div`
   width: 100%;
   diplay: flex;
@@ -13,7 +20,7 @@ const ThumbListWrapper = styled.div`
 const ThumbListTitle = styled.p`
   font-size: 18px;
   font-weight: bold;
-  padding-bottom: 10px;
+  margin-bottom: 10px;
 
   & > a {
     color: #772ce8;
@@ -69,28 +76,51 @@ const ThumbListFooter = styled.div`
     background-color: #dededf;
   }
 `;
-export default function ThumbList({ game }) {
+export default function ThumbList({ game, streams }) {
+  const [showMore, setShowMore] = useState(false);
+
+  const filterStreams = streams.filter((stream) => {
+    return stream.gameName === game.gameName;
+  });
+
+  const showFilterStreams = showMore ? filterStreams.slice(0, 6) : filterStreams.slice(0, 3);
+
+  let key = 0;
+
   return (
     <ThumbListWrapper>
       {game !== undefined ? (
         <ThumbListTitle>
-          推薦的 《<a href="@">{game.name}</a>》 頻道
+          推薦的 《<a href="@">{game.gameName}</a>》 頻道
         </ThumbListTitle>
       ) : (
         <ThumbListTitle>推薦的頻道</ThumbListTitle>
       )}
 
       <ThumbListContents>
-        <ThumbCard></ThumbCard>
-        <ThumbCard></ThumbCard>
-        <ThumbCard></ThumbCard>
+        {showMore === false
+          ? showFilterStreams.map((stream) => {
+              return <ThumbCard key={key++} stream={stream}></ThumbCard>;
+            })
+          : showFilterStreams.map((stream) => {
+              return <ThumbCard key={key++} stream={stream}></ThumbCard>;
+            })}
       </ThumbListContents>
       <ThumbListFooter>
-        <div></div>
-        <button>
-          <p>顯示更多</p>
-          <img src={downArrow} alt=""></img>
-        </button>
+        {showMore ? null : (
+          <>
+            <div></div>
+            <button
+              onClick={() => {
+                setShowMore(!showMore);
+                console.log(showMore);
+              }}
+            >
+              <p>顯示更多</p>
+              <img src={downArrow} alt=""></img>
+            </button>
+          </>
+        )}
         <div></div>
       </ThumbListFooter>
     </ThumbListWrapper>

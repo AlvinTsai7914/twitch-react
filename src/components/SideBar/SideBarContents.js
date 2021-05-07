@@ -66,10 +66,6 @@ const SideBarContents = () => {
 
   const [friendState, setFriendState] = useState([
     { userId: 1, name: '凱蛇 (kaizersjr)', game: 'Apex Legends', status: 'online', audience: '145' },
-    { userId: 2, name: 'ANGRYPUG', game: 'Call of Duty: Warzone', status: 'offline', audience: '0' },
-    { userId: 3, name: 'ANGRYPUG', game: 'Call of Duty: Warzone', status: 'offline', audience: '0' },
-    { userId: 4, name: 'ANGRYPUG', game: 'Call of Duty: Warzone', status: 'offline', audience: '0' },
-    { userId: 5, name: 'ANGRYPUG', game: 'Call of Duty: Warzone', status: 'offline', audience: '0' },
   ]);
 
   return (

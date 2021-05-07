@@ -15,10 +15,10 @@ const Content = styled.div`
 function App() {
   return (
     <div className="App">
-      <Header></Header>
+      <Header />
       <Content>
-        <SideBar></SideBar>
-        <Main></Main>
+        <SideBar />
+        <Main />
       </Content>
     </div>
   );

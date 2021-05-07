@@ -53,7 +53,7 @@ const SideBarSearch = () => {
   return (
     <SideBarSearchWrapper>
       <SideBarSearchIcon>
-        <img src={searchIcon16}></img>
+        <img src={searchIcon16} alt=""></img>
       </SideBarSearchIcon>
       <input placeholder="搜尋以新增好友"></input>
     </SideBarSearchWrapper>
