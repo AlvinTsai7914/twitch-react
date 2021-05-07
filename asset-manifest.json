@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/react-form.git/static/css/main.90c23433.chunk.css",
+    "main.js": "/react-form.git/static/js/main.524011cb.chunk.js",
+    "main.js.map": "/react-form.git/static/js/main.524011cb.chunk.js.map",
+    "runtime-main.js": "/react-form.git/static/js/runtime-main.ef93d719.js",
+    "runtime-main.js.map": "/react-form.git/static/js/runtime-main.ef93d719.js.map",
+    "static/css/2.a2825889.chunk.css": "/react-form.git/static/css/2.a2825889.chunk.css",
+    "static/js/2.3bccff31.chunk.js": "/react-form.git/static/js/2.3bccff31.chunk.js",
+    "static/js/2.3bccff31.chunk.js.map": "/react-form.git/static/js/2.3bccff31.chunk.js.map",
+    "static/js/3.d528c690.chunk.js": "/react-form.git/static/js/3.d528c690.chunk.js",
+    "static/js/3.d528c690.chunk.js.map": "/react-form.git/static/js/3.d528c690.chunk.js.map",
+    "index.html": "/react-form.git/index.html",
+    "static/css/2.a2825889.chunk.css.map": "/react-form.git/static/css/2.a2825889.chunk.css.map",
+    "static/css/main.90c23433.chunk.css.map": "/react-form.git/static/css/main.90c23433.chunk.css.map",
+    "static/js/2.3bccff31.chunk.js.LICENSE.txt": "/react-form.git/static/js/2.3bccff31.chunk.js.LICENSE.txt",
+    "static/media/fi-br-cross-small.584fe01e.svg": "/react-form.git/static/media/fi-br-cross-small.584fe01e.svg",
+    "static/media/fi-rr-comment-alt.7d598a37.svg": "/react-form.git/static/media/fi-rr-comment-alt.7d598a37.svg",
+    "static/media/fi-rr-crown.9ee70447.svg": "/react-form.git/static/media/fi-rr-crown.9ee70447.svg",
+    "static/media/fi-rr-flip-horizontal.7886dc0d.svg": "/react-form.git/static/media/fi-rr-flip-horizontal.7886dc0d.svg",
+    "static/media/fi-rr-inbox.feb1dcbc.svg": "/react-form.git/static/media/fi-rr-inbox.feb1dcbc.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ef93d719.js",
+    "static/css/2.a2825889.chunk.css",
+    "static/js/2.3bccff31.chunk.js",
+    "static/css/main.90c23433.chunk.css",
+    "static/js/main.524011cb.chunk.js"
+  ]
+}
