@@ -12,12 +12,12 @@
 
 ### 使用的工具
 
-- React ( react-create-app )
+- React (` create-react-app` )
 
 - Styled-Components
 
 - Fetch API
-- Twitch API 
+- Twitch API ( `URL/games/top`，`URL/search/streams`)
 - Simple-Bar ( 取代原生 scroll bar )
 
 ------
