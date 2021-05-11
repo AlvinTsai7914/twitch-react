@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 import userIcon from '../../img/png/dog.png';
-
+import { $media_medium } from '../constants/breakpoints';
 const SideBarCardWrapper = styled.div`
   height: 42px;
   width: 100%;
@@ -28,6 +28,11 @@ const CardAvatar = styled.div`
   & > img {
     width: 100%;
   }
+  ${$media_medium} {
+    * {
+      display: block;
+    }
+  }
 `;
 
 const CardInfoWrapper = styled.div`
@@ -36,6 +41,10 @@ const CardInfoWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-start;
+
+  ${$media_medium} {
+    display: none;
+  }
 `;
 
 const CardData = styled.div`

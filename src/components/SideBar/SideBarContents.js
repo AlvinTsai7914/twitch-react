@@ -2,13 +2,20 @@ import { useState } from 'react';
 import styled from 'styled-components';
 
 import SideBarCard from './SideBarCard';
-
+import { $media_medium, $media_small, $media_mobile } from '../constants/breakpoints';
+//圖片
+import followIcon from '../../img/svg/fi-br-heart.svg';
+import adviceIcon from '../../img/svg/fi-br-video-camera.svg';
+import friendIcon from '../../img/svg/fi-br-users.svg';
+//替換滾動條
 import SimpleBar from 'simplebar-react';
 import 'simplebar/dist/simplebar.min.css';
 
 const SideBarContentsWrapper = styled.div`
   height: calc(100% - 51px);
   width: 100%;
+  align-items: center;
+  justify-content: center;
 `;
 
 const SideBarSection = styled.div`
@@ -17,7 +24,8 @@ const SideBarSection = styled.div`
   align-items: center;
   justify-content: center;
   width: 100%;
-  padding: 0 4px 0 0;
+  padding: 0 10px 0 5px;
+
   & > h5 {
     height: 29px;
     width: 220px;
@@ -31,7 +39,9 @@ const SideBarSection = styled.div`
     align-items: flex-start;
     width: 100%;
   }
-
+  & > img {
+    display: none;
+  }
   & > .more {
     height: 37px;
     width: 100%;
@@ -42,6 +52,22 @@ const SideBarSection = styled.div`
       border: none;
       color: #772ce8;
       cursor: pointer;
+    }
+  }
+
+  ${$media_medium} {
+    padding: 0;
+    & > h5 {
+      display: none;
+    }
+    & > img {
+      display: flex;
+      width: 18px;
+      margin: 10px;
+    }
+
+    & > .more {
+      display: none;
     }
   }
 `;
@@ -66,6 +92,10 @@ const SideBarContents = () => {
 
   const [friendState, setFriendState] = useState([
     { userId: 1, name: '凱蛇 (kaizersjr)', game: 'Apex Legends', status: 'online', audience: '145' },
+    { userId: 2, name: '魯蛇 (luzersjr)', game: 'Apex Legends', status: 'online', audience: '1565' },
+    { userId: 3, name: '眼鏡蛇 (glasseszersjr)', game: 'Apex Legends', status: 'online', audience: '145' },
+    { userId: 4, name: '響尾蛇 (ringthetailzersjr)', game: 'Apex Legends', status: 'online', audience: '145' },
+    { userId: 5, name: '瞎雞巴蛇 (XGBzersjr)', game: 'Apex Legends', status: 'online', audience: '145' },
   ]);
 
   return (
@@ -73,6 +103,7 @@ const SideBarContents = () => {
       <SimpleBar style={{ maxHeight: '100%' }}>
         <SideBarSection>
           <h5>已追隨的頻道</h5>
+          <img src={followIcon} alt=""></img>
           <div>
             {followingState.map((value) => (
               <SideBarCard key={value.userId} value={value} />
@@ -84,6 +115,7 @@ const SideBarContents = () => {
         </SideBarSection>
         <SideBarSection>
           <h5>推薦的頻道</h5>
+          <img src={adviceIcon} alt=""></img>
           <div>
             {advicingState.map((value) => (
               <SideBarCard key={value.userId} value={value} />
@@ -95,6 +127,7 @@ const SideBarContents = () => {
         </SideBarSection>
         <SideBarSection>
           <h5>線上好友</h5>
+          <img src={friendIcon} alt=""></img>
           <div>
             {friendState.map((value) => (
               <SideBarCard key={value.userId} value={value} />

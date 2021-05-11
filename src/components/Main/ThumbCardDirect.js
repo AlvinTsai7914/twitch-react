@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 //轉換數字
+
+import { $media_mobile } from '../constants/breakpoints';
 import formatNum from '../constants/formatNum';
 import moreIcon from '../../img/png/more.png';
 
@@ -73,6 +75,9 @@ const CardContent = styled.div`
   display: flex;
   justify-content: flex-start;
   margin-top: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   & > img {
     cursor: pointer;
     width: 40px;
@@ -83,8 +88,10 @@ const CardContent = styled.div`
 `;
 
 const CardInfo = styled.div`
-  width: 100%;
-  flow: 1;
+  display: flex;
+  flex-direction: column;
+  width: 0;
+  flex: 1;
 
   & > h3 {
     width: 100%;
@@ -110,6 +117,8 @@ const CardInfo = styled.div`
     &:hover {
       color: #a970ff;
     }
+  }
+  ${$media_mobile} {
   }
 `;
 
@@ -151,6 +160,10 @@ const ButtonMoreSmall = styled.div`
     height: 14px;
     width: 16px;
   }
+
+  ${$media_mobile} {
+    display: none;
+  }
 `;
 
 export default function ThumbCard({ game }) {
@@ -165,7 +178,7 @@ export default function ThumbCard({ game }) {
       <CardContent>
         <CardInfo>
           <h3>{gameName}</h3>
-          <p>觀眾人數：{formatNum(viewers)}</p>
+          <p>{formatNum(viewers)} 觀眾人數</p>
           <CardLabels>
             <div>動作</div>
             <div>FPS</div>

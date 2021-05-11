@@ -5,23 +5,33 @@ import { getTopGames, getStreamsByGame } from '../../WebAPI';
 import ThumbList from './ThumbList';
 import ThumbListDirect from './ThumbListDirect';
 
+import { $media_medium, $media_small, $media_mobile } from '../constants/breakpoints';
+
+//替換滾動條
 import SimpleBar from 'simplebar-react';
 import 'simplebar/dist/simplebar.min.css';
 
 const MainWrapper = styled.div`
   height: calc(100% - 50px);
-  width: calc(100vw - 240px);
+  width: calc(100% - 240px);
   position: fixed;
   left: 240px;
-  top: 50px;
   background-color: #f7f7f8;
   z-index: 1;
   overflow: hidden;
-  padding-bottom: 50px;
+
+  ${$media_medium} {
+    width: calc(100% - 50px);
+    left: 50px;
+  }
 `;
 
 const MainInsideWrapper = styled.div`
-  padding: 0 30px;
+  padding: 0 30px 30px 30px;
+
+  ${$media_small} {
+    padding: 0 5px;
+  }
 `;
 
 const Main = () => {

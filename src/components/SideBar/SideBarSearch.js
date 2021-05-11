@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 
-import searchIcon16 from '../../img/png/loupe16.png';
+import searchIcon from '../../img/svg/fi-br-search.svg';
 
+import { $media_medium } from '../constants/breakpoints';
 const SideBarSearchWrapper = styled.div`
   width: 240px;
   height: 51px;
@@ -38,6 +39,9 @@ const SideBarSearchWrapper = styled.div`
       background-color: white;
     }
   }
+  ${$media_medium} {
+    display: none;
+  }
 `;
 
 const SideBarSearchIcon = styled.div`
@@ -53,7 +57,7 @@ const SideBarSearch = () => {
   return (
     <SideBarSearchWrapper>
       <SideBarSearchIcon>
-        <img src={searchIcon16} alt=""></img>
+        <img src={searchIcon} alt=""></img>
       </SideBarSearchIcon>
       <input placeholder="搜尋以新增好友"></input>
     </SideBarSearchWrapper>

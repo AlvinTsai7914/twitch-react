@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 //modules 和 components
 import ThumbCard from './ThumbCard';
-
+import { $media_medium, $media_small, $media_mobile } from '../constants/breakpoints';
 //圖片
 import downArrow from '../../img/png/down-arrow.png';
 
@@ -34,6 +34,24 @@ const ThumbListContents = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  ${$media_medium} {
+    & :nth-child(5) {
+      display: none;
+    }
+    & :nth-child(6) {
+      display: none;
+    }
+  }
+
+  ${$media_small} {
+    & :nth-child(3) {
+      display: none;
+    }
+    & :nth-child(4) {
+      display: none;
+    }
+  }
 `;
 
 const ThumbListFooter = styled.div`
@@ -74,6 +92,12 @@ const ThumbListFooter = styled.div`
     width: 100%;
     flow-shrink: 1;
     background-color: #dededf;
+  }
+
+  ${$media_small} {
+    & > button {
+      display: none;
+    }
   }
 `;
 export default function ThumbList({ game, streams }) {

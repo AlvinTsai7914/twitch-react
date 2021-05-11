@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+import { $media_medium, $media_small, $media_mobile } from '../constants/breakpoints';
 //轉換數字
 import formatNum from '../constants/formatNum';
 import moreIcon from '../../img/png/more.png';

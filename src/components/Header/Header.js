@@ -1,37 +1,26 @@
+import { useState } from 'react';
 import styled from 'styled-components';
 
 import Direct from './Direct';
 import Search from './Search';
+import { $media_medium, $media_small, $media_mobile } from '../constants/breakpoints';
+import { SearchInput } from './Search';
 
 import userIcon from '../../img/png/dog.png';
-import twitchLogo from '../../img/png/twitch-logo.png';
-import messageIcon from '../../img/svg/fi-rr-comment-alt.svg';
-import crownIcon from '../../img/svg/fi-rr-crown.svg';
-import noticeIcon from '../../img/svg/fi-rr-inbox.svg';
-import chiPointIcon from '../../img/svg/fi-rr-flip-horizontal.svg';
+import messageIcon from '../../img/svg/fi-br-comment-alt.svg';
+import crownIcon from '../../img/svg/fi-br-crown.svg';
+import noticeIcon from '../../img/svg/fi-br-inbox.svg';
+import chiPointIcon from '../../img/svg/fi-br-flip-horizontal.svg';
+import searchIcon from '../../img/svg/fi-br-search.svg';
 
-const TwitchLogo = styled.div`
-  height: 40px;
-  width: 40px;
-  margin: 5px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  & > img {
-    width: 24px;
-  }
-  &:hover {
-    transition-duration: 0.3s;
-    transform: scale(1.2);
-  }
-`;
 const Nav = styled.div`
   height: 50px;
   width: 100%;
   position: fixed;
   box-shadow: 0px 1px 3px #d4d4d4;
   display: flex;
-  justify-content: column;
+
+  justify-content: space-between;
   padding: 0 0px;
   box-sizing: border-box;
   z-index: 1000;
@@ -40,9 +29,15 @@ const Nav = styled.div`
 //左中右區塊
 const NavBlockLeft = styled.div`
   max-width: 33.3%;
+  min-width: 325px;
   flex-grow: 1;
   display: flex;
   align-items: center;
+  justify-content: flex-start;
+
+  ${$media_mobile} {
+    min-width: fit-content;
+  }
 `;
 const NavBlockMid = styled.div`
   max-width: 33.3%;
@@ -54,17 +49,41 @@ const NavBlockMid = styled.div`
 `;
 const NavBlockRight = styled.div`
   max-width: 33.3%;
+  min-width: 245px;
   flex-grow: 1;
   display: flex;
   align-items: center;
   justify-content: flex-end;
 
-  & > .Nav_R {
-    margin: 0 5px;
+  ${$media_mobile} {
+    min-width: fit-content;
   }
 `;
 
 const CoreButton = styled.button`
+  height: 30px;
+  width: 30px;
+  margin: 0 5px;
+  border: none;
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0);
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+  & > img {
+    height: 16px;
+  }
+
+  ${$media_mobile} {
+    display: none;
+  }
+`;
+
+const CoreButtonSearch = styled.button`
+  display: none;
+  align-items: center;
+  justify-content: center;
   height: 30px;
   width: 30px;
   margin: 0 8px;
@@ -76,7 +95,17 @@ const CoreButton = styled.button`
     background-color: rgba(0, 0, 0, 0.1);
   }
   & > img {
-    height: 16px;
+    width: 16px;
+  }
+
+  ${$media_small} {
+    display: flex;
+  }
+
+  ${$media_mobile} {
+    & > img {
+      width: 18px;
+    }
   }
 `;
 
@@ -117,6 +146,30 @@ const BuyPointButton = styled.div`
     width: 14px;
     margin: 8px;
   }
+
+  @media screen and (max-width: 1200px) {
+    height: 30px;
+    width: 30px;
+    margin: 0 5px;
+    border: none;
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, 0);
+    padding: 0;
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+    & > img {
+      height: 16px;
+    }
+
+    & > div {
+      display: none;
+    }
+  }
+
+  ${$media_mobile} {
+    display: none;
+  }
 `;
 const UserIcon = styled.div`
   width: 35px;
@@ -131,26 +184,36 @@ const UserIcon = styled.div`
   }
 `;
 
+const SearchWrapperRWD = styled.div`
+  width: 400px;
+  height: 100px;
+  position: absolute;
+  top: 90%;
+  right: 6%;
+  border-radius: 6px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2), 0 0px 4px rgba(0, 0, 0, 0.5);
+`;
+
 const Header = () => {
+  const [showTemp, setShowTemp] = useState();
   return (
     <Nav>
       <NavBlockLeft>
-        <TwitchLogo>
-          <img src={twitchLogo} alt=""></img>
-        </TwitchLogo>
         <Direct />
-        <div>
-          <CoreButton>
-            <MoreIcon>...</MoreIcon>
-          </CoreButton>
-        </div>
+
+        <CoreButton>
+          <MoreIcon>...</MoreIcon>
+        </CoreButton>
       </NavBlockLeft>
 
       <NavBlockMid>
-        <Search></Search>
+        <Search showTemp={showTemp} setShowTemp={setShowTemp}></Search>
       </NavBlockMid>
 
       <NavBlockRight>
+        <CoreButtonSearch onClick={() => {}}>
+          <img src={searchIcon} alt=""></img>
+        </CoreButtonSearch>
         <CoreButton>
           <img src={crownIcon} alt=""></img>
         </CoreButton>

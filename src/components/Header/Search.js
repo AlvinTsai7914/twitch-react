@@ -1,21 +1,33 @@
 import { useState } from 'react';
 import styled from 'styled-components';
 
-import searchIcon16 from '../../img/png/loupe16.png';
+import searchIcon from '../../img/svg/fi-br-search.svg';
 import cross from '../../img/svg/fi-br-cross-small.svg';
+import { $media_small } from '../constants/breakpoints';
 
 const SearchRelatvie = styled.div`
   flex-flow: column||wrap;
   height: fit-content;
+  width: 100%;
+  max-width: 400px;
   padding: 0 5px 0 5px;
   background-color: white;
   border-radius: 6px;
   box-shadow: ${(props) =>
     props.showTemp === true ? '0 6px 16px rgb(0 0 0 / 19%), 0 0 4px rgb(0 0 0 / 25%);' : 'none'};
+
+  ${$media_small} {
+    display: none;
+  }
+
+  ${$media_small} {
+    display: none;
+  }
 `;
 
-const SearchWrapper = styled.div`
+const InputWrapper = styled.div`
   display: flex;
+  width: 100%;
   align-items: center;
   justify-content: center;
   height: 50px;
@@ -23,7 +35,8 @@ const SearchWrapper = styled.div`
 `;
 const SearchInput = styled.input`
   height: 36px;
-  width: 355px;
+  width: 100%;
+  max-width: 355px;
   padding: 5px 10px;
   background-color: #e5e5e5;
   border: 2px #e5e5e5 solid;
@@ -49,7 +62,7 @@ const ClearInput = styled.div`
   position: absolute;
   height: 20px;
   width: 20px;
-  right: 12%;
+  right: 45px;
   cursor: pointer;
 `;
 const SearchButton = styled.button`
@@ -105,25 +118,24 @@ const SearchIcon = styled.div`
 `;
 const SearchName = styled.p``;
 
-export default function Search() {
+export default function Search({ showTemp, setShowTemp }) {
   const [value, setValue] = useState('');
-  const [showTemp, setShowTemp] = useState();
 
   const handleInputChange = (value) => {
     setValue(value);
-    value === '' ? setShowTemp(false) : setShowTemp(true);
-    fetch(`https://api.twitch.tv/kraken/games/top?limit=30`, {
-      method: 'GET',
-      headers: {
-        Accept: 'application/vnd.twitchtv.v5+json',
-        'Client-ID': 'hbycoguhoaxnspsvd4nxknw4mtpsfs',
-      },
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-      })
-      .catch((err) => console.log(err));
+    // value === '' ? setShowTemp(false) : setShowTemp(true);
+    // fetch(`https://api.twitch.tv/kraken/games/top?limit=30`, {
+    //   method: 'GET',
+    //   headers: {
+    //     Accept: 'application/vnd.twitchtv.v5+json',
+    //     'Client-ID': 'hbycoguhoaxnspsvd4nxknw4mtpsfs',
+    //   },
+    // })
+    //   .then((res) => res.json())
+    //   .then((data) => {
+    //     console.log(data);
+    //   })
+    //   .catch((err) => console.log(err));
     // .then((data) => {
     //   setIsLoadingPostMessage(false);
     //   if (data.ok === 0) {
@@ -138,7 +150,7 @@ export default function Search() {
   };
   return (
     <SearchRelatvie showTemp={showTemp}>
-      <SearchWrapper>
+      <InputWrapper>
         <SearchInput
           placeholder={'搜尋'}
           value={value}
@@ -170,14 +182,14 @@ export default function Search() {
             }
           }}
         >
-          <img src={searchIcon16} alt=""></img>
+          <img src={searchIcon} alt=""></img>
         </SearchButton>
-      </SearchWrapper>
+      </InputWrapper>
       <SearchList>
         {showTemp === true ? (
           <SearchItem>
             <SearchIcon>
-              <img src={searchIcon16} alt=""></img>
+              <img src={searchIcon} alt=""></img>
             </SearchIcon>
             <SearchName>前往 {value}</SearchName>
           </SearchItem>
@@ -186,3 +198,5 @@ export default function Search() {
     </SearchRelatvie>
   );
 }
+
+export { SearchInput };

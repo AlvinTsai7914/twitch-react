@@ -42,6 +42,16 @@
 4. 問題：在資料串接還沒完成時，`Main` 傳 `props` 給 `List` 和 `Card` ，會造成 `props` 值為 `undefined` ，`fetch(porps)` 時出錯。只好一次全部 `fetch` 完再來整理資料。
 5. 上 gh-pages
 
+5/11
+
+1. 完成 RWD，twitch 有電腦和手機版結構不太一樣，所以手機板就以電腦版加上自己的想法去改了。
+2. 把 Nav 的小圖示都改成粗體。
+
+待解決：
+
+1. 因為使用 nth-child() 控制 card 數量，導致 card 裡的元件的意外消失。
+2. RWD版的 Nav Search 。
+
 ------
 
 

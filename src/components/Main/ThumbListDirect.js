@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { $media_small } from '../constants/breakpoints';
 
 import ThumbCardDirect from './ThumbCardDirect';
 
@@ -10,6 +11,7 @@ const ThumbListWrapper = styled.div`
   justify-content: flex-start;
   flex-direction: column;
   margin-top: 30px;
+  flex-
 `;
 const ThumbListTitle = styled.p`
   font-size: 18px;
@@ -28,6 +30,18 @@ const ThumbListContents = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  ${$media_small} {
+    & div:nth-child(4) {
+      display: none;
+    }
+    & div:nth-child(5) {
+      display: none;
+    }
+    & div:nth-child(6) {
+      display: none;
+    }
+  }
 `;
 
 const ThumbListFooter = styled.div`
