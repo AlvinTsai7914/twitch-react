@@ -1,30 +1,35 @@
 {
   "files": {
     "main.css": "/twitch-react/static/css/main.90c23433.chunk.css",
-    "main.js": "/twitch-react/static/js/main.260d4779.chunk.js",
-    "main.js.map": "/twitch-react/static/js/main.260d4779.chunk.js.map",
+    "main.js": "/twitch-react/static/js/main.8b7ee8a8.chunk.js",
+    "main.js.map": "/twitch-react/static/js/main.8b7ee8a8.chunk.js.map",
     "runtime-main.js": "/twitch-react/static/js/runtime-main.d382e5ee.js",
     "runtime-main.js.map": "/twitch-react/static/js/runtime-main.d382e5ee.js.map",
     "static/css/2.a2825889.chunk.css": "/twitch-react/static/css/2.a2825889.chunk.css",
-    "static/js/2.41288deb.chunk.js": "/twitch-react/static/js/2.41288deb.chunk.js",
-    "static/js/2.41288deb.chunk.js.map": "/twitch-react/static/js/2.41288deb.chunk.js.map",
+    "static/js/2.9f0d414a.chunk.js": "/twitch-react/static/js/2.9f0d414a.chunk.js",
+    "static/js/2.9f0d414a.chunk.js.map": "/twitch-react/static/js/2.9f0d414a.chunk.js.map",
     "static/js/3.d528c690.chunk.js": "/twitch-react/static/js/3.d528c690.chunk.js",
     "static/js/3.d528c690.chunk.js.map": "/twitch-react/static/js/3.d528c690.chunk.js.map",
     "index.html": "/twitch-react/index.html",
     "static/css/2.a2825889.chunk.css.map": "/twitch-react/static/css/2.a2825889.chunk.css.map",
     "static/css/main.90c23433.chunk.css.map": "/twitch-react/static/css/main.90c23433.chunk.css.map",
-    "static/js/2.41288deb.chunk.js.LICENSE.txt": "/twitch-react/static/js/2.41288deb.chunk.js.LICENSE.txt",
+    "static/js/2.9f0d414a.chunk.js.LICENSE.txt": "/twitch-react/static/js/2.9f0d414a.chunk.js.LICENSE.txt",
+    "static/media/fi-br-comment-alt.305472ab.svg": "/twitch-react/static/media/fi-br-comment-alt.305472ab.svg",
     "static/media/fi-br-cross-small.584fe01e.svg": "/twitch-react/static/media/fi-br-cross-small.584fe01e.svg",
-    "static/media/fi-rr-comment-alt.7d598a37.svg": "/twitch-react/static/media/fi-rr-comment-alt.7d598a37.svg",
-    "static/media/fi-rr-crown.9ee70447.svg": "/twitch-react/static/media/fi-rr-crown.9ee70447.svg",
-    "static/media/fi-rr-flip-horizontal.7886dc0d.svg": "/twitch-react/static/media/fi-rr-flip-horizontal.7886dc0d.svg",
-    "static/media/fi-rr-inbox.feb1dcbc.svg": "/twitch-react/static/media/fi-rr-inbox.feb1dcbc.svg"
+    "static/media/fi-br-crown.2b32a9fe.svg": "/twitch-react/static/media/fi-br-crown.2b32a9fe.svg",
+    "static/media/fi-br-direct.1af3fac4.svg": "/twitch-react/static/media/fi-br-direct.1af3fac4.svg",
+    "static/media/fi-br-flip-horizontal.0b97146e.svg": "/twitch-react/static/media/fi-br-flip-horizontal.0b97146e.svg",
+    "static/media/fi-br-heart.f82f18a3.svg": "/twitch-react/static/media/fi-br-heart.f82f18a3.svg",
+    "static/media/fi-br-inbox.8b97d5fe.svg": "/twitch-react/static/media/fi-br-inbox.8b97d5fe.svg",
+    "static/media/fi-br-search.2f4dd621.svg": "/twitch-react/static/media/fi-br-search.2f4dd621.svg",
+    "static/media/fi-br-users.146a3267.svg": "/twitch-react/static/media/fi-br-users.146a3267.svg",
+    "static/media/fi-br-video-camera.e0953b6a.svg": "/twitch-react/static/media/fi-br-video-camera.e0953b6a.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.d382e5ee.js",
     "static/css/2.a2825889.chunk.css",
-    "static/js/2.41288deb.chunk.js",
+    "static/js/2.9f0d414a.chunk.js",
     "static/css/main.90c23433.chunk.css",
-    "static/js/main.260d4779.chunk.js"
+    "static/js/main.8b7ee8a8.chunk.js"
   ]
 }
