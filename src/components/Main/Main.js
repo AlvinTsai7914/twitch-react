@@ -14,14 +14,15 @@ import 'simplebar/dist/simplebar.min.css';
 const MainWrapper = styled.div`
   height: calc(100% - 50px);
   width: calc(100% - 240px);
+  max-width: calc(100vw - 240px);
   position: fixed;
   left: 240px;
   background-color: #f7f7f8;
   z-index: 1;
-  overflow: hidden;
 
   ${$media_medium} {
     width: calc(100% - 50px);
+    max-width: calc(100% - 50px);
     left: 50px;
   }
 `;

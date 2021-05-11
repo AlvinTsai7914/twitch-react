@@ -45,12 +45,16 @@
 5/11
 
 1. 完成 RWD，twitch 有電腦和手機版結構不太一樣，所以手機板就以電腦版加上自己的想法去改了。
-2. 把 Nav 的小圖示都改成粗體。
+2. 把 `Nav` 的小圖示都改成粗體。
 
 待解決：
 
-1. 因為使用 nth-child() 控制 card 數量，導致 card 裡的元件的意外消失。
-2. RWD版的 Nav Search 。
+1. 因為使用 `nth-child()` 控制 `card` 數量，導致 `card` 裡的元件的意外消失。
+2. RWD 版的 Nav Search 。
+
+5/11 第二次上傳
+
+1. 解決手機上跑板問題，方法：加上了 `<MainListCard> flex: 1` ，`<Main> max-width: `。
 
 ------
 

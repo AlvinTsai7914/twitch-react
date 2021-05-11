@@ -17,13 +17,13 @@ const Nav = styled.div`
   height: 50px;
   width: 100%;
   position: fixed;
+  top: 0;
   box-shadow: 0px 1px 3px #d4d4d4;
   display: flex;
-
   justify-content: space-between;
   padding: 0 0px;
   box-sizing: border-box;
-  z-index: 1000;
+  z-index: 100;
   background-color: white;
 `;
 //左中右區塊

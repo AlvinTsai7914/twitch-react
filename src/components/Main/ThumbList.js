@@ -10,6 +10,7 @@ import { $media_medium, $media_small, $media_mobile } from '../constants/breakpo
 import downArrow from '../../img/png/down-arrow.png';
 
 const ThumbListWrapper = styled.div`
+  max-width: 100%;
   width: 100%;
   diplay: flex;
   align-items: center;

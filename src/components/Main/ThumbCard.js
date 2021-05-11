@@ -6,17 +6,19 @@ import formatNum from '../constants/formatNum';
 import moreIcon from '../../img/png/more.png';
 
 const ThumbCardWrapper = styled.div`
+  flex: 1;
+  max-width: 100%;
+  width: 0;
   padding: 0 5px;
-  width: 100%;
 `;
 
 const CardImage = styled.div`
-  width: 100%;
+  max-width: 100%;
   position: relative;
 
   & > a {
     & > img {
-      width: 100%;
+      max-width: 100%;
       cursor: pointer;
       flex: 1;
     }
@@ -106,7 +108,6 @@ const CardContent = styled.div`
   display: flex;
   justify-content: flex-start;
   margin-top: 10px;
-
   & > img {
     cursor: pointer;
     width: 40px;
@@ -121,11 +122,12 @@ const CardInfo = styled.div`
   flex-direction: column;
   flex: 1;
   width: 0;
+  over-flow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 
   & > h3 {
-    flex: 1;
+    width: 100%;
     font-size: 16px;
     margin-bottom: 3px;
     overflow: hidden;
@@ -140,7 +142,7 @@ const CardInfo = styled.div`
   & > p {
     height: 24px;
     color: #53535f;
-    flex: 1;
+    width: 100%;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;

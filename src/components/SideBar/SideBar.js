@@ -4,7 +4,7 @@ import SideBarContents from './SideBarContents';
 import SideBarSearch from './SideBarSearch';
 import { $media_medium } from '../constants/breakpoints';
 const SideBarWrapper = styled.div`
-  height: calc(100% - 51px);
+  height: calc(100% - 50px);
   width: 240px;
   position: fixed;
   background-color: #efeff1;

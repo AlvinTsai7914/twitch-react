@@ -5,6 +5,7 @@ import { $media_small } from '../constants/breakpoints';
 import ThumbCardDirect from './ThumbCardDirect';
 
 const ThumbListWrapper = styled.div`
+  max-width: 100%;
   width: 100%;
   diplay: flex;
   align-items: center;

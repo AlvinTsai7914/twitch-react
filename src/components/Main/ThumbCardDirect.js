@@ -6,13 +6,14 @@ import formatNum from '../constants/formatNum';
 import moreIcon from '../../img/png/more.png';
 
 const ThumbCardWrapper = styled.div`
+  flex: 1;
   padding: 0 5px;
-  width: 100%;
+  width: 0;
   margin-bottom: 20px;
 `;
 
 const CardImage = styled.div`
-  width: 100%;
+  max-width: 100%;
   position: relative;
 
   & > div {

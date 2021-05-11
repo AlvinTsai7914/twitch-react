@@ -5,22 +5,20 @@ import SideBar from './components/SideBar/SideBar';
 import Main from './components/Main/Main';
 
 const Content = styled.div`
-  height: 100%;
+  height: calc(100vh - 50px);
   width: 100%;
-  padding-top: 50px;
-  display: flex;
-  over-flox: hidden;
+  margin-top: 50px;
 `;
 
 function App() {
   return (
-    <div className="App">
+    <>
       <Header />
       <Content>
         <SideBar />
         <Main />
       </Content>
-    </div>
+    </>
   );
 }
 

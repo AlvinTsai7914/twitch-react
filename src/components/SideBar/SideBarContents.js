@@ -16,6 +16,10 @@ const SideBarContentsWrapper = styled.div`
   width: 100%;
   align-items: center;
   justify-content: center;
+
+  ${$media_medium} {
+    height: calc(100%);
+  }
 `;
 
 const SideBarSection = styled.div`
