@@ -49,12 +49,30 @@
 
 待解決：
 
-1. 因為使用 `nth-child()` 控制 `card` 數量，導致 `card` 裡的元件的意外消失。
+1. `<ThumbList>` 因為使用 `nth-child()` 控制 `card` 數量，導致 `card` 裡的元件的意外消失。( 5/12 已解決)
 2. RWD 版的 Nav Search 。
 
 5/11 第二次上傳
 
 1. 解決手機上跑板問題，方法：加上了 `<MainListCard> flex: 1` ，`<Main> max-width: `。
+
+ 5/12 
+
+1. 加入 `<Header>`左側按鈕點擊時，下方底線 `<BottomLine>` 跟著移動 ( 使用`e.target.offsetLeft`來定位 ) 
+
+2. 解決使用 `nth-child()` 控制 `card` 數量，導致 `card` 裡的元件的意外消失：將 `<ThumbList> `和 `<ThumbCard>`從原本的 `styled.div` 改成 `styled.ul/styled.li`，再利用 `li:nth-child()`避免選取到`<ThumbCard>`子層。
+
+3. 使用 `@media(hover:hover){button:hover{}}`可以避免觸控裝置點擊時出現不必要的hover效果，只留下PC版的 hover。
+
+   ```
+   @media(hover:hover){
+   	button:hover{
+   		hover-style....
+   	}
+   }
+   ```
+
+   
 
 ------
 

@@ -31,25 +31,25 @@ const ThumbListTitle = styled.p`
     }
   }
 `;
-const ThumbListContents = styled.div`
+const ThumbListContents = styled.ul`
   display: flex;
   align-items: center;
   justify-content: center;
-
+  list-style: none;
   ${$media_medium} {
-    & :nth-child(5) {
+    & li:nth-child(5) {
       display: none;
     }
-    & :nth-child(6) {
+    & li:nth-child(6) {
       display: none;
     }
   }
 
   ${$media_small} {
-    & :nth-child(3) {
+    & li:nth-child(3) {
       display: none;
     }
-    & :nth-child(4) {
+    & li:nth-child(4) {
       display: none;
     }
   }

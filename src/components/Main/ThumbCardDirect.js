@@ -5,7 +5,7 @@ import { $media_mobile } from '../constants/breakpoints';
 import formatNum from '../constants/formatNum';
 import moreIcon from '../../img/png/more.png';
 
-const ThumbCardWrapper = styled.div`
+const ThumbCardWrapper = styled.li`
   flex: 1;
   padding: 0 5px;
   width: 0;

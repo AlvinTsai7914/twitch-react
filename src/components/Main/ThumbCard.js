@@ -5,7 +5,7 @@ import { $media_medium, $media_small, $media_mobile } from '../constants/breakpo
 import formatNum from '../constants/formatNum';
 import moreIcon from '../../img/png/more.png';
 
-const ThumbCardWrapper = styled.div`
+const ThumbCardWrapper = styled.li`
   flex: 1;
   max-width: 100%;
   width: 0;
@@ -78,6 +78,9 @@ const CardImage = styled.div`
 `;
 
 const StreamType = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: absolute;
   background-color: red;
   top: 0;
@@ -86,22 +89,35 @@ const StreamType = styled.div`
   margin: 10px;
   color: white;
   border-radius: 6px;
-  text-align: center;
   font-size: 16px;
   font-weight: bold;
+  line-height: 1.2;
+  ${$media_mobile} {
+    font-size: 12px;
+    width: 32px;
+    height: 18px;
+    margin: 5px;
+    border-radius: 4px;
+  }
 `;
 
 const Viewers = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: absolute;
   bottom: 0;
   height: 24px;
-  width: fit-content;
   margin: 10px;
   padding: 0 4px;
   background-color: rgba(0, 0, 0, 0.6);
   font-size: 16px;
   color: #fff;
   text-align: center;
+  ${$media_mobile} {
+    font-size: 12px;
+    margin: 5px;
+  }
 `;
 
 const CardContent = styled.div`

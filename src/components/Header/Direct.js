@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import styled from 'styled-components';
 
-import { $media_medium, $media_small, $media_mobile } from '../constants/breakpoints';
+import { $media_medium, $media_small, $media_mobile, $hover } from '../constants/breakpoints';
 
 import directSVG from '../../img/svg/fi-br-direct.svg';
 import twitchLogo from '../../img/png/twitch-logo.png';
@@ -15,9 +15,11 @@ const TwitchLogo = styled.div`
   & > img {
     width: 24px;
   }
-  &:hover {
-    transition-duration: 0.3s;
-    transform: scale(1.2);
+  ${$hover} {
+    &:hover {
+      transition-duration: 0.3s;
+      transform: scale(1.2);
+    }
   }
 
   ${$media_mobile} {
@@ -34,35 +36,11 @@ const DirectBlock = styled.div`
   max-width: 350px;
   height: 100%;
   position: relative;
-  &:after {
-    content: '';
-    display: ${(props) => (props.directory === '' ? 'none' : 'block')};
-    position: absolute;
-    background-color: #772ce8;
-    height: 2px;
-    width: ${(props) =>
-      props.directory === 'following'
-        ? '55px'
-        : props.directory === 'directory'
-        ? '38px'
-        : props.directory === 'esports'
-        ? '38px'
-        : props.directory === 'music'
-        ? '38px'
-        : '0'};
-    bottom: 0;
-    left: ${(props) =>
-      props.directory === 'following'
-        ? '6%'
-        : props.directory === 'directory'
-        ? '35%'
-        : props.directory === 'esports'
-        ? '58.55%'
-        : props.directory === 'music'
-        ? '82.5%'
-        : '0'};
-  }
+  font-size: 18px;
 
+  ${$media_medium} {
+    font-size: 14px;
+  }
   ${$media_mobile} {
     display: none;
   }
@@ -80,15 +58,12 @@ const DirectButton = styled.div`
 const DirectAnchor = styled.a`
   color: ${(props) => props.color};
   text-decoration: none;
-  font-size: 18px;
   font-weight: bold;
-  &:hover {
-    color: #9147ff;
-    cursor: pointer;
-  }
-
-  ${$media_medium} {
-    font-size: 14px;
+  ${$hover} {
+    &:hover {
+      color: #9147ff;
+      cursor: pointer;
+    }
   }
 `;
 
@@ -113,11 +88,36 @@ const DirectButtonMobile = styled.div`
   }
 `;
 
+const BottomLineWrapper = styled.div`
+  position: absolute;
+  height: 2px;
+  background-color: #772ce8;
+  bottom: 0;
+  transition: all 0.5s ease;
+  width: ${({ bottomLine }) => `calc(${bottomLine.offsetLeft}px + ${bottomLine.textLenght}em)`};
+  &:before {
+    position: absolute;
+    bottom: 0;
+    content: '';
+    display: block;
+    left: 0;
+    height: 2px;
+    width: ${({ bottomLine }) => `${bottomLine.offsetLeft}px`};
+    background-color: white;
+    transition: all 0.5s ease;
+  }
+`;
+
 export default function Direct() {
   const [directory, setDirectory] = useState('');
-  const handleDirectoryClick = (direct) => {
-    setDirectory(direct);
-    console.log(directory);
+  const [bottomLine, setBottomLine] = useState({});
+
+  const handleDirectClick = (offsetLeft, textLenght, directory) => {
+    setDirectory(directory);
+    setBottomLine({
+      offsetLeft,
+      textLenght,
+    });
   };
 
   return (
@@ -128,12 +128,12 @@ export default function Direct() {
       <DirectButtonMobile>
         <img src={directSVG}></img>
       </DirectButtonMobile>
-      <DirectBlock directory={directory}>
+      <DirectBlock>
         <DirectButton>
           <DirectAnchor
             color={directory === 'following' ? '#772ce8' : '#0e0e10'}
-            onClick={() => {
-              handleDirectoryClick('following');
+            onClick={(e) => {
+              handleDirectClick(e.target.offsetLeft, e.target.innerText.length, 'following');
             }}
           >
             追隨中
@@ -142,8 +142,8 @@ export default function Direct() {
         <DirectButton>
           <DirectAnchor
             color={directory === 'directory' ? '#772ce8' : '#0e0e10'}
-            onClick={() => {
-              handleDirectoryClick('directory');
+            onClick={(e) => {
+              handleDirectClick(e.target.offsetLeft, e.target.innerText.length, 'directory');
             }}
           >
             瀏覽
@@ -153,8 +153,8 @@ export default function Direct() {
         <DirectButton>
           <DirectAnchor
             color={directory === 'esports' ? '#772ce8' : '#0e0e10'}
-            onClick={() => {
-              handleDirectoryClick('esports');
+            onClick={(e) => {
+              handleDirectClick(e.target.offsetLeft, e.target.innerText.length, 'esports');
             }}
           >
             電競
@@ -163,13 +163,14 @@ export default function Direct() {
         <DirectButton>
           <DirectAnchor
             color={directory === 'music' ? '#772ce8' : '#0e0e10'}
-            onClick={() => {
-              handleDirectoryClick('music');
+            onClick={(e) => {
+              handleDirectClick(e.target.offsetLeft, e.target.innerText.length, 'music');
             }}
           >
             音樂
           </DirectAnchor>
         </DirectButton>
+        <BottomLineWrapper bottomLine={bottomLine}></BottomLineWrapper>
       </DirectBlock>
     </>
   );
