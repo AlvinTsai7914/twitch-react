@@ -9,6 +9,7 @@ const ThumbCardWrapper = styled.li`
   flex: 1;
   max-width: 100%;
   width: 0;
+  height: 100%;
   padding: 0 5px;
 `;
 
@@ -17,16 +18,19 @@ const CardImage = styled.div`
   position: relative;
 
   & > a {
+    width: 100%;
+    overflow: hidden;
     & > img {
-      max-width: 100%;
-      cursor: pointer;
-      flex: 1;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
     }
   }
   ::before {
     content: '';
     display: block;
-    height: 98%;
+    height: 100%;
     width: 0px;
     background-color: #9147ff;
     position: absolute;
@@ -41,7 +45,7 @@ const CardImage = styled.div`
     height: 0px;
     background-color: #9147ff;
     position: absolute;
-    bottom: 4px;
+    bottom: 0px;
     left: 3px;
     transform: skewX(-45deg);
   }
@@ -77,6 +81,11 @@ const CardImage = styled.div`
   }
 `;
 
+const AspectSpace = styled.div`
+  padding-bottom: 56.25%;
+  width: 100%;
+  background-color: #efeff1;
+`;
 const StreamType = styled.div`
   display: flex;
   align-items: center;
@@ -143,6 +152,7 @@ const CardInfo = styled.div`
   white-space: nowrap;
 
   & > h3 {
+    max-height: 21px;
     width: 100%;
     font-size: 16px;
     margin-bottom: 3px;
@@ -215,6 +225,7 @@ export default function ThumbCard({ stream }) {
     <ThumbCardWrapper>
       <CardImage>
         <a href={url}>
+          <AspectSpace></AspectSpace>
           <img src={preview} alt=""></img>
           <StreamType>LIVE</StreamType>
           <Viewers>觀眾人數: {formatNum(viewers)}</Viewers>
