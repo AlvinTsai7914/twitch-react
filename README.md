@@ -72,7 +72,10 @@
    }
    ```
 
-   
+
+5/13
+
+1. 加入`<Sidabar>`的卡片的展開效果，用上了`keyframes`和`animation: 0.25s ${fadeIn} ease;`
 
 ------
 

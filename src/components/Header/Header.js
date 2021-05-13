@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import Direct from './Direct';
 import Search from './Search';
-import { $media_medium, $media_small, $media_mobile } from '../constants/breakpoints';
+import { $media_small, $media_mobile } from '../constants/breakpoints';
 import { SearchInput } from './Search';
 
 import userIcon from '../../img/png/dog.png';

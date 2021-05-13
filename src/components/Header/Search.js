@@ -3,8 +3,8 @@ import styled from 'styled-components';
 
 import searchIcon from '../../img/svg/fi-br-search.svg';
 import cross from '../../img/svg/fi-br-cross-small.svg';
-import { $media_small, $hover } from '../constants/breakpoints';
-
+import { $media_small } from '../constants/breakpoints';
+import { hover } from '../constants/styles';
 const SearchRelatvie = styled.div`
   flex-flow: column||wrap;
   height: fit-content;
@@ -44,7 +44,7 @@ const SearchInput = styled.input`
   transition: background-color 0.1s ease;
   transition: border 0.2s ease;
 
-  ${$hover} {
+  ${hover} {
     &:hover {
       transition: border 0.2s ease;
       border: 2px #ccc solid;
@@ -82,7 +82,7 @@ const SearchButton = styled.button`
     width: 18px;
     opacity: ${(props) => (props.value !== '' ? '1' : '0.2')};
   }
-  ${$hover} {
+  ${hover} {
     &:hover {
       background-color: ${(props) => (props.value !== '' ? '#e5e5e5' : '#f9f9f9')};
     }
@@ -101,7 +101,7 @@ const SearchItem = styled.li`
   display: flex;
   align-items: center;
   border-radius: 6px;
-  ${$hover} {
+  ${hover} {
     &:hover {
       background-color: #e5e5e5;
     }

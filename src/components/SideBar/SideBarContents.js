@@ -28,7 +28,9 @@ const SideBarSection = styled.div`
   align-items: center;
   justify-content: center;
   width: 100%;
+  transform: height;
   padding: 0 10px 0 5px;
+  transition: all 3s ease;
 
   & > h5 {
     height: 29px;
@@ -37,12 +39,7 @@ const SideBarSection = styled.div`
     margin: 10px;
     font-weight: bold;
   }
-  & > div {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
-  }
+
   & > img {
     display: none;
   }
@@ -76,8 +73,26 @@ const SideBarSection = styled.div`
   }
 `;
 
+const SideBarSectionContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+`;
+
 const SideBarContents = () => {
+  const [followingSlice, setFollowingSlice] = useState(true);
   const [followingState, setfFollowingState] = useState([
+    { userId: 1, name: '凱蛇 (kaizersjr)', game: 'Apex Legends', status: 'online', audience: '145' },
+    { userId: 2, name: 'ANGRYPUG', game: 'Call of Duty: Warzone', status: 'offline', audience: '11,111' },
+    { userId: 3, name: 'iiTzTimmy', game: 'Apex Legends', status: 'online', audience: '6,178' },
+    { userId: 4, name: 'Moonryde', game: 'Call of Duty: Warzone', status: 'online', audience: '5,593' },
+    { userId: 5, name: 'Symfuhny', game: 'Leage of Legends', status: 'online', audience: '3,067' },
+    { userId: 1, name: '凱蛇 (kaizersjr)', game: 'Apex Legends', status: 'online', audience: '145' },
+    { userId: 2, name: 'ANGRYPUG', game: 'Call of Duty: Warzone', status: 'offline', audience: '11,111' },
+    { userId: 3, name: 'iiTzTimmy', game: 'Apex Legends', status: 'online', audience: '6,178' },
+    { userId: 4, name: 'Moonryde', game: 'Call of Duty: Warzone', status: 'online', audience: '5,593' },
+    { userId: 5, name: 'Symfuhny', game: 'Leage of Legends', status: 'online', audience: '3,067' },
     { userId: 1, name: '凱蛇 (kaizersjr)', game: 'Apex Legends', status: 'online', audience: '145' },
     { userId: 2, name: 'ANGRYPUG', game: 'Call of Duty: Warzone', status: 'offline', audience: '11,111' },
     { userId: 3, name: 'iiTzTimmy', game: 'Apex Legends', status: 'online', audience: '6,178' },
@@ -108,23 +123,30 @@ const SideBarContents = () => {
         <SideBarSection>
           <h5>已追隨的頻道</h5>
           <img src={followIcon} alt=""></img>
-          <div>
-            {followingState.map((value) => (
-              <SideBarCard key={value.userId} value={value} />
-            ))}
-          </div>
+          <SideBarSectionContent>
+            {followingSlice
+              ? followingState.slice(0, 5).map((value) => <SideBarCard key={value.userId} value={value} />)
+              : followingState.map((value) => <SideBarCard key={value.userId} value={value} />)}
+          </SideBarSectionContent>
           <div className="more">
-            <button>顯示更多</button>
+            <button
+              onClick={() => {
+                console.log(followingSlice);
+                setFollowingSlice(!followingSlice);
+              }}
+            >
+              顯示更{followingSlice ? '多' : '少'}
+            </button>
           </div>
         </SideBarSection>
         <SideBarSection>
           <h5>推薦的頻道</h5>
           <img src={adviceIcon} alt=""></img>
-          <div>
+          <SideBarSectionContent>
             {advicingState.map((value) => (
               <SideBarCard key={value.userId} value={value} />
             ))}
-          </div>
+          </SideBarSectionContent>
           <div className="more">
             <button>顯示更多</button>
           </div>
@@ -132,11 +154,11 @@ const SideBarContents = () => {
         <SideBarSection>
           <h5>線上好友</h5>
           <img src={friendIcon} alt=""></img>
-          <div>
+          <SideBarSectionContent>
             {friendState.map((value) => (
               <SideBarCard key={value.userId} value={value} />
             ))}
-          </div>
+          </SideBarSectionContent>
           <div className="more">
             <button>顯示更多</button>
           </div>

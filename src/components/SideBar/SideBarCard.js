@@ -1,18 +1,21 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 import userIcon from '../../img/png/dog.png';
 import { $media_medium } from '../constants/breakpoints';
+import { fadeIn } from '../constants/styles';
 const SideBarCardWrapper = styled.div`
   height: 42px;
   width: 100%;
+  overflow: hidden;
+  animation: 0.25s ${fadeIn} ease;
 
   & > a {
     height: 100%;
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
-    padding: 5px 10px;
+    justify-content: flex-start;
+    padding: 5px 5px;
     text-decoration: none;
   }
 
@@ -37,7 +40,8 @@ const CardAvatar = styled.div`
 
 const CardInfoWrapper = styled.div`
   width: 190px;
-  mix-width: 190px;
+  max-width: 190px;
+  flex: 1;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -49,7 +53,7 @@ const CardInfoWrapper = styled.div`
 
 const CardData = styled.div`
   height: 38px;
-  width: 124px;
+  width: 120px;
   margin-left: 10px;
   broder: 1px solid yellow;
   display: flex;
@@ -79,15 +83,12 @@ const CardStatus = styled.div`
   font-family: inherit;
   font-size: 17px;
   font-weight: 600;
-  width: fit-content;
-  min-width: 40px;
   margin-left: 5px;
   display: flex;
   align-items: center;
   justify-contenr: center;
   white-space: nowrap;
   color: #53535f;
-  flex-shrink: 0;
 
   & > div {
     width: 8px;

@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import styled from 'styled-components';
 
-import { $media_medium, $media_small, $media_mobile, $hover } from '../constants/breakpoints';
-
+import { $media_medium, $media_mobile } from '../constants/breakpoints';
+import { hover } from '../constants/styles';
 import directSVG from '../../img/svg/fi-br-direct.svg';
 import twitchLogo from '../../img/png/twitch-logo.png';
 const TwitchLogo = styled.div`
@@ -15,7 +15,7 @@ const TwitchLogo = styled.div`
   & > img {
     width: 24px;
   }
-  ${$hover} {
+  ${hover} {
     &:hover {
       transition-duration: 0.3s;
       transform: scale(1.2);
@@ -59,7 +59,7 @@ const DirectAnchor = styled.a`
   color: ${(props) => props.color};
   text-decoration: none;
   font-weight: bold;
-  ${$hover} {
+  ${hover} {
     &:hover {
       color: #9147ff;
       cursor: pointer;
