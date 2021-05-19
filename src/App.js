@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter as HashRouter, Router, Switch, Route, Link } from 'react-router-dom';
 import './App.css';
 import Header from './components/Header/Header';
 import SideBar from './components/SideBar/SideBar';
@@ -18,29 +18,29 @@ const Content = styled.div`
 
 function App() {
   return (
-    <Router>
+    <HashRouter>
       <Header />
       <Content>
         <SideBar />
         <Switch>
-          <Route exact path="/">
+          <Route exact path="/twitch-react/">
             <Main />
           </Route>
-          <Route path="/following">
+          <Route path="/twitch-react/following">
             <Following />
           </Route>
-          <Route path="/directory">
+          <Route path="/twitch-react/directory">
             <Directory />
           </Route>
-          <Route path="/esport">
+          <Route path="/twitch-react/esport">
             <Esport />
           </Route>
-          <Route path="/music">
+          <Route path="/twitch-react/music">
             <Music />
           </Route>
         </Switch>
       </Content>
-    </Router>
+    </HashRouter>
   );
 }
 

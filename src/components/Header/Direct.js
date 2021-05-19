@@ -126,7 +126,7 @@ export default function Direct() {
   return (
     <>
       <TwitchLogo>
-        <Link to="/">
+        <Link to="/twitch-react/">
           <img src={twitchLogo} alt=""></img>
         </Link>
       </TwitchLogo>
@@ -141,7 +141,7 @@ export default function Direct() {
               handleDirectClick(e.target.offsetLeft, e.target.innerText.length, 'following');
             }}
           >
-            <Link to="/following">追隨中</Link>
+            <Link to="/twitch-react/following">追隨中</Link>
           </DirectAnchor>
         </DirectButton>
         <DirectButton>
@@ -151,7 +151,7 @@ export default function Direct() {
               handleDirectClick(e.target.offsetLeft, e.target.innerText.length, 'directory');
             }}
           >
-            <Link to="/directory">瀏覽 </Link>
+            <Link to="/twitch-react/directory">瀏覽 </Link>
           </DirectAnchor>
         </DirectButton>
         <MidLine></MidLine>
@@ -162,7 +162,7 @@ export default function Direct() {
               handleDirectClick(e.target.offsetLeft, e.target.innerText.length, 'esports');
             }}
           >
-            <Link to="/esport">電競</Link>
+            <Link to="/twitch-react/esport">電競</Link>
           </DirectAnchor>
         </DirectButton>
         <DirectButton>
@@ -172,7 +172,7 @@ export default function Direct() {
               handleDirectClick(e.target.offsetLeft, e.target.innerText.length, 'music');
             }}
           >
-            <Link to="/music">音樂</Link>
+            <Link to="/twitch-react/music">音樂</Link>
           </DirectAnchor>
         </DirectButton>
         <BottomLineWrapper bottomLine={bottomLine}></BottomLineWrapper>
