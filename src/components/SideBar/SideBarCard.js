@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 
 import userIcon from '../../img/png/dog.png';
 import { $media_medium } from '../constants/breakpoints';

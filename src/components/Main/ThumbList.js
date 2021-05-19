@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 //modules 和 components
 import ThumbCard from './ThumbCard';
-import { $media_medium, $media_small, $media_mobile } from '../constants/breakpoints';
+import { $media_medium, $media_small } from '../constants/breakpoints';
 //圖片
 import downArrow from '../../img/png/down-arrow.png';
 

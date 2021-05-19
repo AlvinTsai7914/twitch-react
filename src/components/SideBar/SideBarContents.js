@@ -2,7 +2,7 @@ import { useState } from 'react';
 import styled from 'styled-components';
 
 import SideBarCard from './SideBarCard';
-import { $media_medium, $media_small, $media_mobile } from '../constants/breakpoints';
+import { $media_medium } from '../constants/breakpoints';
 //圖片
 import followIcon from '../../img/svg/fi-br-heart.svg';
 import adviceIcon from '../../img/svg/fi-br-video-camera.svg';

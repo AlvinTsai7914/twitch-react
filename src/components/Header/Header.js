@@ -1,10 +1,9 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 import Direct from './Direct';
 import Search from './Search';
 import { $media_small, $media_mobile } from '../constants/breakpoints';
-import { SearchInput } from './Search';
 
 import userIcon from '../../img/png/dog.png';
 import messageIcon from '../../img/svg/fi-br-comment-alt.svg';
@@ -182,16 +181,6 @@ const UserIcon = styled.div`
   & > img {
     width: 30px;
   }
-`;
-
-const SearchWrapperRWD = styled.div`
-  width: 400px;
-  height: 100px;
-  position: absolute;
-  top: 90%;
-  right: 6%;
-  border-radius: 6px;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2), 0 0px 4px rgba(0, 0, 0, 0.5);
 `;
 
 const Header = () => {

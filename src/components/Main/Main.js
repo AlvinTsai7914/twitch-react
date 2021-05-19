@@ -1,11 +1,9 @@
 import { useState, useEffect } from 'react';
 import styled from 'styled-components';
-
 import { getTopGames, getStreamsByGame } from '../../WebAPI';
 import ThumbList from './ThumbList';
 import ThumbListDirect from './ThumbListDirect';
-
-import { $media_medium, $media_small, $media_mobile } from '../constants/breakpoints';
+import { $media_medium, $media_small } from '../constants/breakpoints';
 
 //替換滾動條
 import SimpleBar from 'simplebar-react';
@@ -64,6 +62,7 @@ const Main = () => {
                     status: stream.channel.status,
                     preview: stream.preview.large,
                     logo: stream.channel.logo,
+                    lang: stream.channel.language,
                   },
                 ])
               )

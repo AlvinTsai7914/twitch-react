@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 import { $media_medium, $media_mobile } from '../constants/breakpoints';
 import { hover } from '../constants/styles';
@@ -55,10 +56,12 @@ const DirectButton = styled.div`
   }
 `;
 
-const DirectAnchor = styled.a`
-  color: ${(props) => props.color};
-  text-decoration: none;
-  font-weight: bold;
+const DirectAnchor = styled.div`
+  & > a {
+    color: ${(props) => props.color};
+    font-weight: bold;
+    text-decoration: none;
+  }
   ${hover} {
     &:hover {
       color: #9147ff;
@@ -123,10 +126,12 @@ export default function Direct() {
   return (
     <>
       <TwitchLogo>
-        <img src={twitchLogo} alt=""></img>
+        <Link to="/">
+          <img src={twitchLogo} alt=""></img>
+        </Link>
       </TwitchLogo>
       <DirectButtonMobile>
-        <img src={directSVG}></img>
+        <img src={directSVG} alt=""></img>
       </DirectButtonMobile>
       <DirectBlock>
         <DirectButton>
@@ -136,7 +141,7 @@ export default function Direct() {
               handleDirectClick(e.target.offsetLeft, e.target.innerText.length, 'following');
             }}
           >
-            追隨中
+            <Link to="/following">追隨中</Link>
           </DirectAnchor>
         </DirectButton>
         <DirectButton>
@@ -146,7 +151,7 @@ export default function Direct() {
               handleDirectClick(e.target.offsetLeft, e.target.innerText.length, 'directory');
             }}
           >
-            瀏覽
+            <Link to="/directory">瀏覽 </Link>
           </DirectAnchor>
         </DirectButton>
         <MidLine></MidLine>
@@ -157,7 +162,7 @@ export default function Direct() {
               handleDirectClick(e.target.offsetLeft, e.target.innerText.length, 'esports');
             }}
           >
-            電競
+            <Link to="/esport">電競</Link>
           </DirectAnchor>
         </DirectButton>
         <DirectButton>
@@ -167,7 +172,7 @@ export default function Direct() {
               handleDirectClick(e.target.offsetLeft, e.target.innerText.length, 'music');
             }}
           >
-            音樂
+            <Link to="/music">音樂</Link>
           </DirectAnchor>
         </DirectButton>
         <BottomLineWrapper bottomLine={bottomLine}></BottomLineWrapper>

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { $media_medium, $media_small, $media_mobile } from '../constants/breakpoints';
+import { $media_mobile } from '../constants/breakpoints';
 //轉換數字
 import formatNum from '../constants/formatNum';
 import moreIcon from '../../img/png/more.png';
@@ -46,8 +46,9 @@ const CardImage = styled.div`
     background-color: #9147ff;
     position: absolute;
     bottom: 0px;
-    left: 3px;
+    left: 4px;
     transform: skewX(-45deg);
+    z-index: -1;
   }
 
   & > div {
@@ -124,8 +125,9 @@ const Viewers = styled.div`
   color: #fff;
   text-align: center;
   ${$media_mobile} {
+    height: 18px;
     font-size: 12px;
-    margin: 5px;
+    margin: 4px;
   }
 `;
 
@@ -220,7 +222,7 @@ const ButtonMoreSmall = styled.div`
 `;
 
 export default function ThumbCard({ stream }) {
-  const { gameName, logo, streamer, preview, status, url, viewers } = stream;
+  const { gameName, logo, streamer, preview, status, url, viewers, lang } = stream;
   return (
     <ThumbCardWrapper>
       <CardImage>
@@ -239,7 +241,7 @@ export default function ThumbCard({ stream }) {
           <p>{streamer}</p>
           <p>{gameName}</p>
           <CardLabels>
-            <div>中文</div>
+            <div>{lang}</div>
           </CardLabels>
         </CardInfo>
         <ButtonMoreSmall>

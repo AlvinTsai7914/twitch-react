@@ -37,7 +37,7 @@ const SearchInput = styled.input`
   height: 36px;
   width: 100%;
   max-width: 355px;
-  padding: 5px 10px;
+  padding: 5px 30px 5px 10px;
   background-color: #e5e5e5;
   border: 2px #e5e5e5 solid;
   border-radius: 6px 0 0 6px;
@@ -101,6 +101,8 @@ const SearchItem = styled.li`
   display: flex;
   align-items: center;
   border-radius: 6px;
+  overflow: hidden;
+  cursor: pointer;
   ${hover} {
     &:hover {
       background-color: #e5e5e5;
@@ -122,14 +124,17 @@ const SearchIcon = styled.div`
     height: 16px;
   }
 `;
-const SearchName = styled.p``;
+const SearchName = styled.p`
+  white-space: nowrap;
+  margin-right: 5px;
+`;
 
 export default function Search({ showTemp, setShowTemp }) {
   const [value, setValue] = useState('');
 
   const handleInputChange = (value) => {
     setValue(value);
-    // value === '' ? setShowTemp(false) : setShowTemp(true);
+    value === '' ? setShowTemp(false) : setShowTemp(true);
     // fetch(`https://api.twitch.tv/kraken/games/top?limit=30`, {
     //   method: 'GET',
     //   headers: {
