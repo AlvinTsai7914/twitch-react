@@ -25,6 +25,10 @@ const MainWrapper = styled.div`
 const MainInsideWrapper = styled.div`
   padding: 0 30px 30px 30px;
 
+  & > img {
+    width: 100%;
+  }
+
   ${$media_small} {
     padding: 0 5px;
   }

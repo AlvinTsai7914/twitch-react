@@ -126,7 +126,12 @@ export default function Direct() {
   return (
     <>
       <TwitchLogo>
-        <Link to="/twitch-react/">
+        <Link
+          to="/twitch-react/"
+          onClick={(e) => {
+            handleDirectClick('');
+          }}
+        >
           <img src={twitchLogo} alt=""></img>
         </Link>
       </TwitchLogo>
