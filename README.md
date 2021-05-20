@@ -1,6 +1,6 @@
 # twitch-react
 
-
+gh-pages: https://alvintsai7914.github.io/twitch-react/
 
 ### Why this?
 
