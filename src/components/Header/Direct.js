@@ -81,11 +81,14 @@ const DirectButtonMobile = styled.div`
   display: none;
   align-items: center;
 
-  & > img {
-    height: 18px;
-    width: 18px;
-    transform: rotate(180deg) scale(0.9, 1);
+  & > a {
+    & > img {
+      height: 18px;
+      width: 18px;
+      transform: rotate(180deg) scale(0.9, 1);
+    }
   }
+
   ${$media_mobile} {
     display: flex;
   }
@@ -136,7 +139,10 @@ export default function Direct() {
         </Link>
       </TwitchLogo>
       <DirectButtonMobile>
-        <img src={directSVG} alt=""></img>
+        <Link to="/twitch-react/directory">
+          {' '}
+          <img src={directSVG} alt=""></img>{' '}
+        </Link>
       </DirectButtonMobile>
       <DirectBlock>
         <DirectButton>

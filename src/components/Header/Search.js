@@ -132,6 +132,13 @@ const SearchName = styled.p`
 export default function Search({ showTemp, setShowTemp }) {
   const [value, setValue] = useState('');
 
+  const handleSearch = () => {
+    if (value !== '') {
+      console.log(`search: ${value}`);
+      setValue('');
+    }
+  };
+
   const handleInputChange = (value) => {
     setValue(value);
     value === '' ? setShowTemp(false) : setShowTemp(true);
@@ -174,6 +181,9 @@ export default function Search({ showTemp, setShowTemp }) {
           onBlur={() => {
             setShowTemp(false);
           }}
+          onKeyPress={() => {
+            handleSearch();
+          }}
         />
         {value !== '' ? (
           <ClearInput
@@ -187,10 +197,7 @@ export default function Search({ showTemp, setShowTemp }) {
         <SearchButton
           value={value}
           onClick={() => {
-            if (value !== '') {
-              setValue('');
-              console.log('search');
-            }
+            handleSearch();
           }}
         >
           <img src={searchIcon} alt=""></img>

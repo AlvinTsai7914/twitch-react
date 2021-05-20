@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-
+import { useState } from 'react';
 import searchIcon from '../../img/svg/fi-br-search.svg';
-
+import cross from '../../img/svg/fi-br-cross-small.svg';
 import { $media_medium } from '../constants/breakpoints';
 const SideBarSearchWrapper = styled.div`
   width: 240px;
@@ -53,13 +53,37 @@ const SideBarSearchIcon = styled.div`
   }
 `;
 
+const ClearInput = styled.div`
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+`;
+
 const SideBarSearch = () => {
+  const [value, setValue] = useState('');
+
   return (
     <SideBarSearchWrapper>
       <SideBarSearchIcon>
         <img src={searchIcon} alt=""></img>
       </SideBarSearchIcon>
-      <input placeholder="搜尋以新增好友"></input>
+      <input
+        placeholder="搜尋以新增好友"
+        value={value}
+        onChange={(e) => {
+          setValue(e.target.value);
+        }}
+      ></input>
+      <ClearInput
+        onClick={() => {
+          setValue('');
+        }}
+      >
+        <img src={cross} alt=""></img>
+      </ClearInput>
     </SideBarSearchWrapper>
   );
 };
