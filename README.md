@@ -1,6 +1,6 @@
 # twitch-react
 
-![image] (https://github.com/AlvinTsai7914/twitch-react/blob/main/preview.jpg)
+![image](https://github.com/AlvinTsai7914/twitch-react/blob/main/preview.jpg)
 
 gh-pages: https://alvintsai7914.github.io/twitch-react/
 
